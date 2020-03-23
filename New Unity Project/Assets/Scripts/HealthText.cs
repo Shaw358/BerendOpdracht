@@ -10,11 +10,12 @@ public class HealthText : MonoBehaviour
 
     private void Start()
     {
-        txt.text = objectHealth.getHealth().ToString();
+        objectHealth.healthChanged += updateText;
+        //txt.text = objectHealth.getHealth().ToString();
     }
 
-    public void updateText()
+    public void updateText(int x)
     {
-        txt.text = objectHealth.getHealth().ToString();
+        txt.text = x.ToString();
     }
 }

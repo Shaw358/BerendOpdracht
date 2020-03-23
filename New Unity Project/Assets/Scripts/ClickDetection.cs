@@ -5,14 +5,11 @@ public class ClickDetection : MonoBehaviour
 {
     [SerializeField] private HealthText healthText;
     [SerializeField] private Objectheath objectHealth;
+    [SerializeField] private CameraShake cameraShake;
 
-    public void OnMouseOver()
-    {
-        if (Input.GetKeyDown(KeyCode.Mouse0))
-        {
-            objectHealth.setHealth(10);
-            healthText.updateText();
-        }
+    public void OnMouseDown()
+    {        
+        objectHealth.setHealth();
+        //cameraShake.setShake(1);
     }
-
 }
