@@ -254,7 +254,7 @@ GameObject:
   m_Component:
   - component: {fileID: 858365878}
   m_Layer: 0
-  m_Name: Pool Location
+  m_Name: Pool_Location
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -386,7 +386,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1521957332}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8c7883d24051e1342aaf18c26e4383d0, type: 3}
+  m_Script: {fileID: 11500000, guid: 211524776a98afb46be9af747f945f52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!65 &1521957334

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//opdracht 1 - zonder enums
 public class Dictionary1 : MonoBehaviour
 {
     private static int machine_gun_ammo = 100;

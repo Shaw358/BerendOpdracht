@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//opdracht 3 - inventory system, tracking 
 public class Inventory : MonoBehaviour
-{
+{    
     public enum keys
     {
         MACHINE_GUN,
@@ -11,10 +12,13 @@ public class Inventory : MonoBehaviour
         THERMONUCLEAR_WARHEAD
     }
 
-    Dictionary<keys, List<GameObject>> inventory;
+    private keys curWep;
+
+    private Dictionary<keys, List<GameObject>> inventory = new Dictionary<keys, List<GameObject>>();
 
     private void Start()
     {
+        curWep = keys.MACHINE_GUN;
         inventory[keys.MACHINE_GUN] = new List<GameObject>();
         inventory[keys.PISTOL] = new List<GameObject>();
         inventory[keys.THERMONUCLEAR_WARHEAD] = new List<GameObject>();
@@ -23,15 +27,21 @@ public class Inventory : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKey(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Q))
         {
-            //inventory[keys.MACHINE_GUN] -= 1;
+            
         }
-
-        if (inventory.ContainsKey(keys.MACHINE_GUN))
+        if (Input.GetKeyDown(KeyCode.P))
         {
-            //int value = inventory[keys.MACHINE_GUN];
-            // Debug.Log(value);
+            PrintList();
+        }
+        if (Input.GetKeyDown(KeyCode.W))
+        {
+            
+        }
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            
         }
     }
 
@@ -42,6 +52,9 @@ public class Inventory : MonoBehaviour
 
     private void PrintList()
     {
-
+        for (int i = 0; i < inventory[curWep].Count; i++)
+        {
+            Debug.Log("Ammo packs collected for " + inventory[curWep] + " " + i);
+        }
     }
 }

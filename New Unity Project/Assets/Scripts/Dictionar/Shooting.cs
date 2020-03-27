@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//opdaracht 2 - met enums
 public class Shooting : MonoBehaviour
 {
     public enum keys
