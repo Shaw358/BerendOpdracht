@@ -12,7 +12,15 @@ public class Inventory : MonoBehaviour
     }
 
     Dictionary<keys, List<GameObject>> inventory;
-    
+
+    private void Start()
+    {
+        inventory[keys.MACHINE_GUN] = new List<GameObject>();
+        inventory[keys.PISTOL] = new List<GameObject>();
+        inventory[keys.THERMONUCLEAR_WARHEAD] = new List<GameObject>();
+    }
+
+
     private void Update()
     {
         if (Input.GetKey(KeyCode.Space))
@@ -23,11 +31,16 @@ public class Inventory : MonoBehaviour
         if (inventory.ContainsKey(keys.MACHINE_GUN))
         {
             //int value = inventory[keys.MACHINE_GUN];
-           // Debug.Log(value);
+            // Debug.Log(value);
         }
     }
 
-    public void SetMachineGunAmmo()
+    public void SetMachineGunAmmo(GameObject gameobject)
+    {
+        inventory[keys.MACHINE_GUN].Add(gameObject);
+    }
+
+    private void PrintList()
     {
 
     }

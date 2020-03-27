@@ -4,15 +4,23 @@ using UnityEngine;
 
 public class MachineGunAmmoPack : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private Transform poolLocation;
+
+    private void Start()
     {
-        
+        poolLocation = GameObject.Find("Pool_Location").GetComponent<Transform>(); 
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnCollisionEnter(Collision collision)
     {
-        
+        if(collision.transform.name.Equals("Player"))
+        {
+            collision.gameObject.GetComponent<Inventory>().SetMachineGunAmmo(gameObject);
+        }
+    }
+
+    private void GotoPoolLocation()
+    {
+        gameObject.transform.position = poolLocation.position;
     }
 }
