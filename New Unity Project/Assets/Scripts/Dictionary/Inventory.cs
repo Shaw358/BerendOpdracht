@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-//opdracht 3 - inventory system, tracking 
+///opdracht 3 - inventory system, tracking 
 public class Inventory : MonoBehaviour
 {
     public enum Keys
@@ -16,7 +16,6 @@ public class Inventory : MonoBehaviour
 
     private Dictionary<Keys, List<GameObject>> inventory = new Dictionary<Keys, List<GameObject>>();
 
-
     private void Start()
     {
         curWep = Keys.MACHINE_GUN;
@@ -24,7 +23,6 @@ public class Inventory : MonoBehaviour
         inventory[Keys.PISTOL] = new List<GameObject>();
         inventory[Keys.THERMONUCLEAR_WARHEAD] = new List<GameObject>();
     }
-
 
     private void Update()
     {
@@ -34,7 +32,7 @@ public class Inventory : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.P))
         {
-            PrintList();
+            PrintList((int)curWep);
         }
     }
 
@@ -60,7 +58,6 @@ public class Inventory : MonoBehaviour
                 print("Thermonuclear weapon");
                 break;
         }
-
     }
 
     public void SetMachineGunAmmo(GameObject gameobject)
@@ -68,11 +65,20 @@ public class Inventory : MonoBehaviour
         inventory[Keys.MACHINE_GUN].Add(gameObject);
     }
 
-    private void PrintList()
+    private void PrintList(int index)
     {
-        for (int i = 0; i < inventory[curWep].Count; i++)
+        switch(index)
         {
-            Debug.Log("Ammo packs collected for " + inventory[curWep] + " " + i);
+            case 0:
+                Debug.Log("Weapon packs collected for the Machine gun" + inventory[Keys.MACHINE_GUN].Count);
+                break;
+            case 1:
+                Debug.Log("Weapon packs collected for the Pistol" + inventory[Keys.PISTOL].Count);
+                break;
+            case 2:
+                Debug.Log("Parts collected for the Warhead" + inventory[Keys.THERMONUCLEAR_WARHEAD].Count);
+                break;
         }
     }
+    
 }

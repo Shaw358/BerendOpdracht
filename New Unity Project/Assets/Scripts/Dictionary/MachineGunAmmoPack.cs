@@ -18,6 +18,7 @@ public class MachineGunAmmoPack : MonoBehaviour
         if(collision.transform.name.Equals("Player"))
         {
             collision.gameObject.GetComponent<Inventory>().SetMachineGunAmmo(gameObject);
+            GotoPoolLocation();
         }
     }
 
