@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ExplodeState : State
 {
-    private Transform target;
+    [SerializeField] private Transform target;
     private float blast_radius = 5;
     [SerializeField] private Sprite[] sprite;
     private bool is_exploding = false;
